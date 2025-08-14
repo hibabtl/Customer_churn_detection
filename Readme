@@ -1,1 +1,42 @@
+# Customer Churn Prediction
+
+## 📌 Project Overview
+This project focuses on predicting customer churn — identifying customers likely to discontinue services.  
+Three models were tested: Logistic Regression, Random Forest, and XGBoost.
+
+The business priority is maximizing recall for churners (Class 1) to ensure we capture as many actual churn cases as possible.
+
+---
+
+## 📊 Model Performance Comparison
+
+| Metric / Model        | Logistic Regression | Random Forest | XGBoost |
+|-----------------------|--------------------|--------------|---------|
+| **Accuracy**          | ~0.77              | ~0.74       | **0.73** |
+| **Precision (Churn)** | ~0.55              | **0.51**     | 0.50    |
+| **Recall (Churn)**    | 0.65                | 0.78        | **0.80** |
+| **F1-score (Churn)**  | 0.60                | **0.62**     | 0.61    |
+
+---
+
+## 🔍 Key Insights
+
+- **XGBoost** achieved the highest recall (0.80), making it best suited when the cost of missing churners is high.
+- **Random Forest** offered slightly better precision for churners (0.51), reducing false positives but missing more churners.
+- **Logistic Regression** did not perform well.
+
+---
+
+## 🚀 Final Decision
+
+Given the business requirement of **minimizing false negatives for churners**,  
+**XGBoost** is selected as the primary model despite its lower precision.
+
+---
+
+## 🛠 Tech Stack
+
+- **Language:** Python  
+- **Libraries:** pandas, numpy, scikit-learn, xgboost, matplotlib, seaborn  
+- **Evaluation Metrics:** Accuracy, Precision, Recall, F1-score, Confusion Matrix
 
